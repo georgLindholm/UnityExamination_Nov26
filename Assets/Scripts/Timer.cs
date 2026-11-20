@@ -18,7 +18,7 @@ public class Timer : MonoBehaviour
 
     public void AddTime()
     {
-        timer += 5;
+        timer += 2;
         
         UiHandler.UpdateTimerUI(timer);
     }
