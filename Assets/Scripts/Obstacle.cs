@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
-    [SerializeField] private float obstacleSpeed = 5f;
+    [SerializeField] private float obstacleSpeed = 4f;
     
     private Rigidbody2D _rb;
 

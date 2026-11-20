@@ -6,6 +6,7 @@ public class Movement : MonoBehaviour
 {
     public UnityEvent onDeathTrigger;
     public UnityEvent onScoreTrigger;
+    public UnityEvent onTimerTrigger;
     
     [SerializeField] private float movementForce = 3f;
     
@@ -42,9 +43,16 @@ public class Movement : MonoBehaviour
             onDeathTrigger.Invoke();
         }
 
-        if (other.tag == "Scorer")
+        if (other.tag == "ScorePowerup")
         {
             onScoreTrigger.Invoke();
+            
+            Destroy(other.gameObject);
+        }
+
+        if (other.tag == "TimerPowerup")
+        {
+            onTimerTrigger.Invoke();
             
             Destroy(other.gameObject);
         }
