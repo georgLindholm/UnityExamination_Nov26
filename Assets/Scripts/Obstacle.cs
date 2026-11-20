@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class Obstacle : MonoBehaviour
@@ -15,5 +16,12 @@ public class Obstacle : MonoBehaviour
     private void FixedUpdate()
     {
         _rb.position += Vector2.down * obstacleSpeed * Time.deltaTime;
+    }
+
+    private IEnumerator DestroyObstacle()
+    {
+        yield return new WaitForSeconds(2f);
+        
+        Destroy(this.gameObject);
     }
 }
