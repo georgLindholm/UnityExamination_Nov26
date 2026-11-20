@@ -15,6 +15,8 @@ public class ObstacleSpawner : MonoBehaviour
 
     private void SpawnObstacle()
     {
+        obstacleSpawnPoint.x = Random.Range(-2, 2);
+        
         GameObject obstacle = Instantiate(obstaclePrefab, obstacleSpawnPoint, Quaternion.Euler(0, 0, Random.Range(-3, 3)));
         
         StartCoroutine(ObstacleCoroutine());
