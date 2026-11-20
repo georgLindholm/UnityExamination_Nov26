@@ -6,7 +6,7 @@ public class Scoring : MonoBehaviour
     
     private int score = 0;
     
-    void IncrementScore()
+    public void IncrementScore()
     {
         score++;
         

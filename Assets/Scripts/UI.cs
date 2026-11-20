@@ -6,6 +6,7 @@ public class UI : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private GameObject scoreTextTarget;
+    [SerializeField] private TextMeshProUGUI timerText;
     
     private void Update()
     {   
@@ -14,6 +15,11 @@ public class UI : MonoBehaviour
 
     public void UpdateScoreUI(int newScore)
     {
-        scoreText.text = newScore.ToString("000");
+        scoreText.text = newScore.ToString();
+    }
+
+    public void UpdateTimerUI(int newTime)
+    {
+        timerText.text = newTime.ToString("00");
     }
 }

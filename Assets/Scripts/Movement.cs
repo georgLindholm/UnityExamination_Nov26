@@ -4,7 +4,8 @@ using UnityEngine.Events;
 
 public class Movement : MonoBehaviour
 {
-    public UnityEvent onDeathzone;
+    public UnityEvent onDeathTrigger;
+    public UnityEvent onScoreTrigger;
     
     [SerializeField] private float movementForce = 3f;
     
@@ -38,7 +39,14 @@ public class Movement : MonoBehaviour
         {
             Respawn();
             
-            onDeathzone.Invoke();
+            onDeathTrigger.Invoke();
+        }
+
+        if (other.tag == "Scorer")
+        {
+            onScoreTrigger.Invoke();
+            
+            Destroy(other.gameObject);
         }
     }
 }
