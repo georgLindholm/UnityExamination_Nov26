@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+    [SerializeField] private float movementForce = 3f;
+    
     private Rigidbody2D rb;
     
     Vector2 input = Vector2.zero;
@@ -14,7 +16,7 @@ public class Movement : MonoBehaviour
 
     private void FixedUpdate()
     {  
-        input = new Vector2(Input.GetAxis("Horizontal"), 0f);
+        input = new Vector2(Input.GetAxis("Horizontal") * movementForce, 0f);
 
         rb.linearVelocity = input;
     }
